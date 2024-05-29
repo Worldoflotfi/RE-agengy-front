@@ -6,6 +6,7 @@ import { HiOutlineMenuAlt3, HiOutlineUserCircle } from 'react-icons/hi';
 import CustomerModal from '../utils/CustomerModal';
 import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
+import Verification from '../components/Auth/Verification'
 
 
 type Props = {
@@ -128,6 +129,24 @@ const handleClose = (e:any) => {
                                 setRoute={setRoute}
                                 activeItem={activeItem}
                                 component={SignUp}
+                            />
+                        )
+                    }                
+                </>
+            )
+        }
+
+        {
+            route == 'Verification' && (
+                <>
+                    {
+                        open && (
+                            <CustomerModal 
+                                open={open}
+                                setOpen={setOpen}
+                                setRoute={setRoute}
+                                activeItem={activeItem}
+                                component={Verification}
                             />
                         )
                     }                

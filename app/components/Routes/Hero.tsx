@@ -7,16 +7,17 @@ type Props = {};
 
 const Hero: FC<Props> = (props) => {
   return (
-    <div className="w-full mt-4 1000px:flex items-center relative">
-      <div className="1000px:w-[40%] flex 1000px:h-auto items-center justify-end pt-[10%] 1000px:pt-[0] z-10">
-        <Image
+    <div className="w-full mt-4  1000px:flex items-center justify-center relative">      
+        <div className='1000px:w-[35%] rounded-full hero_animation  m-auto mt-12 flex 1000px:h-auto items-center justify-end pt-[10%] 1000px:pt-[0] z-10'>
+          <Image
           src={require("../../../public/images/1695553286999-removebg-preview.png")}
           alt=""
           width={700} // Add appropriate width
           height={700} // Add appropriate height
-          className="object-contain 1100px:max-w-[90%] 1500px:max-w-[85%] h-[auto] z-[10]"
-        />
-      </div>
+          className="1100px:max-w-[90%] m-auto 1500px:max-w-[85%] h-[auto] z-[10]"
+        />   
+        </div>
+
       <div className="1000px:w-[60%] flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left mt-[150px]">
         <h2 className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[50px] font-[600] font-Josefin py-2 1000px:w-[90%]">
           Empower Your Real Estate Journey with Cutting-Edge Online Learning
