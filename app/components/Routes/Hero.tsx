@@ -8,7 +8,7 @@ type Props = {};
 const Hero: FC<Props> = (props) => {
   return (
     <div className="w-full mt-4  1000px:flex items-center justify-center relative">      
-        <div className='1000px:w-[35%] rounded-full hero_animation  m-auto mt-12 flex 1000px:h-auto items-center justify-end pt-[10%] 1000px:pt-[0] z-10'>
+        <div className='1000px:w-[35%] rounded-full hero_animation  m-auto mt-12 flex 1000px:h-[430px] items-center justify-end pt-[10%] 1000px:pt-[0] z-10'>
           <Image
           src={require("../../../public/images/1695553286999-removebg-preview.png")}
           alt=""
