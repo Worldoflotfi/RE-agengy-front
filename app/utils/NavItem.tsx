@@ -8,7 +8,7 @@ export const navItemsData = [
         url:'/',
     },
     {
-        name: 'Courses',
+        name: 'Formations',
         url:'/courses',
     },
     {
@@ -41,7 +41,7 @@ const NavItem: React.FC<Props> = ({activeItem, isMobile}) => {
                     <span 
                     className={`${
                         activeItem === index 
-                         ? 'dark:text-[#37a39a] text-[crimson]'
+                         ? 'dark:text-[#FFC100] text-[crimson]'
                          : 'dark:text-white text-black'
                     } text-[18px] px-6 font-Poppins font-[400]`}
                     >

@@ -27,12 +27,12 @@ const SignUp: FC<Props> = ({ setRoute }) => {
             toast.success(message);
             setRoute('Verification');
         }
-        if (error) {
-            if ('data' in error) {
-                const errorData = error as any;
-                toast.error(errorData.data.message);
-            }
-        }
+        // if (error) {
+        //     if ('data' in error) {
+        //         const errorData = error as any;
+        //         toast.error("try again");
+        //     }
+        // }
     }, [isSuccess, error, data, setRoute]);  //passing all props(signUp)
 
 
@@ -125,7 +125,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     )}
                 </div>
                 <div className="w-full mt-5">
-                    <input type="submit" value='Login' className={`${styles.button}`} />
+                    <input type="submit" value='Sign Up' className={`${styles.button}`} />
                 </div>
                 <br />
                 <h5 className='text-center pt-4 font-Poppins text-[14px] text-black dark:text-white'>
@@ -141,7 +141,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                         className='text-[#2190ff] pl-1 cursor-pointer'
                         onClick={() => setRoute('Login')}
                     >
-                        Login
+                        Sign In
                     </span>
                 </h5>
             </form>
