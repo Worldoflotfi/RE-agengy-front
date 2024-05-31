@@ -14,25 +14,25 @@ const Page: FC<Props> = (props) => {
     const [open, setOpen] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
     const [route, setRoute] = useState('Login');
-    const {user} = useSelector((state: any) => state.auth);
+    const { user } = useSelector((state: any) => state.auth);
 
     return (
         <div>
-     {/* removing protected route to make changes in profile page until server side handled */}
+            {/* removing protected route to make changes in profile page until server side handled */}
             {/* <Protected> */}
-                <Heading
-                    title={`${user?.name} profile`}
-                    description='Devenir un agent immobilier'
-                    keywords='immobilier-neuf,immobilier-ancien'
-                />
-                <Header
-                    open={open}
-                    setOpen={setOpen}
-                    activeItem={activeItem}
-                    route={route}
-                    setRoute={setRoute}
-                />
-                <Profile user={user}/>
+            <Heading
+                title={`${user?.name} profile`}
+                description='Devenir un agent immobilier'
+                keywords='immobilier-neuf,immobilier-ancien'
+            />
+            <Header
+                open={open}
+                setOpen={setOpen}
+                activeItem={activeItem}
+                route={route}
+                setRoute={setRoute}
+            />
+            <Profile user={user} />
             {/* </Protected> */}
         </div>
     )

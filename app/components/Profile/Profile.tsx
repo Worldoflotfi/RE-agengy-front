@@ -9,13 +9,13 @@ type Props = {
     user: any,
 }
 
-const Profile: FC<Props> = ({user}) => {
+const Profile: FC<Props> = ({ user }) => {
     const [scroll, setScroll] = useState(false);
     const [avatar, setAvatar] = useState(null);
     const [active, setActive] = useState(1);
     const [logout, setLogout] = useState(false);
 
-    const {} = useLogOutQuery(undefined, {
+    const { } = useLogOutQuery(undefined, {
         skip: !logout ? true : false,
     });
 
@@ -33,24 +33,24 @@ const Profile: FC<Props> = ({user}) => {
             }
         });
     }
-  return (
-    <div className='w-[85%] flex mx-auto'>
-        <div 
-        className={
-            `w-[180px] 800px:w[310px] h-[450px] dark:bg-slate-900 bg-opacity-90 border bg-white dark:border-[#ffffff1d] border-[#00000014] rounded-[5px] shadow-xl dark:shadow-sm mt-[70px] mb-[180px] sticky
+    return (
+        <div className='w-[85%] flex mx-auto'>
+            <div
+                className={
+                    `w-[180px] 800px:w[310px] h-[450px] dark:bg-slate-900 bg-opacity-90 border bg-white dark:border-[#ffffff1d] border-[#00000014] rounded-[5px] shadow-xl dark:shadow-sm mt-[70px] mb-[180px] sticky
             ${scroll ? 'top-[30px]' : 'top-[30px]'} left-[30px]`
-        }
-        >
-            <SideBarProfile 
-            user={user}
-            active={active}
-            avatar={avatar}
-            setActive={setActive}
-            logOutHandler={logOutHandler}
-            />
+                }
+            >
+                <SideBarProfile
+                    user={user}
+                    active={active}
+                    avatar={avatar}
+                    setActive={setActive}
+                    logOutHandler={logOutHandler}
+                />
+            </div>
         </div>
-    </div>
-)
+    )
 }
 
 export default Profile
