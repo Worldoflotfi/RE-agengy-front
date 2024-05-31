@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import avatar from '../../public/images/emptyProfilePic2.png';
 import { useSession } from 'next-auth/react';
-import { useSocialAuthMutation } from '@/redux/features/auth/authApi';
+import { useLogOutQuery, useSocialAuthMutation } from '@/redux/features/auth/authApi';
 import toast from 'react-hot-toast';
 
 
@@ -30,6 +30,11 @@ const Header: FC<Props> = ({ open, setOpen, activeItem, route, setRoute }) => {
     const { user } = useSelector((state: any) => state.auth);
     const { data } = useSession();
     const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
+    const [logout, setLogout] = useState(false);
+
+    const { } = useLogOutQuery(undefined, {
+        skip: !logout ? true : false,
+    });
 
     useEffect(() => {
         if (!user) {
@@ -37,8 +42,14 @@ const Header: FC<Props> = ({ open, setOpen, activeItem, route, setRoute }) => {
                 socialAuth({ email: data?.user?.email, name: data?.user?.name, avatar: data.user?.image });
             }
         }
-        if(isSuccess){
-            toast.success('Login Successfully');
+        if (data === null) {     //Remove login out 2 times problem
+            if (isSuccess) {
+                toast.success('Login Successfully');
+            }
+
+        }
+        if (data === null) {
+            setLogout(true);
         }
     }, [data, user]);
 
