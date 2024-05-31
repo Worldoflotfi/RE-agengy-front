@@ -60,7 +60,7 @@ const Hero: FC<Props> = (props) => {
             src={require("../../../public/images/avatar9.jpg")}
             alt=""
             width={50} // Add appropriate width
-            height={50} // Add appropriate height
+            height={50} // Add appropriate   //adding appropriate height to the variable 
             className="rounded-full ml-[-20px]"
           />
           <p className="font-Josefine dark:text-[#edfff4] text-[#000000b3] 1000px:pl-3 text-[18px] font-[600]">
