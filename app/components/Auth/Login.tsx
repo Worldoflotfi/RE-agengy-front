@@ -21,23 +21,23 @@ const schema = Yup.object().shape({
 
 const Login: FC<Props> = ({ setRoute, setOpen }) => {
     const [show, setShow] = useState(false);
-    const [login, {isSuccess,error}] = useLoginMutation();
+    const [login, { isSuccess, error }] = useLoginMutation();
 
     const formik = useFormik({
         initialValues: { email: "", password: "" },
         validationSchema: schema,
         onSubmit: async ({ email, password }) => {
-            await login({email, password})
+            await login({ email, password })
         },
     });
 
     useEffect(() => {
-        if(isSuccess){
+        if (isSuccess) {
             toast.success('LoggedIn successfully')
             setOpen(false);
         }
-        if(error){
-            if('data' in error){
+        if (error) {
+            if ('data' in error) {
                 const errorData = error as any;
                 toast.error(errorData.data.message);
             }
@@ -108,11 +108,11 @@ const Login: FC<Props> = ({ setRoute, setOpen }) => {
                     Or join with
                 </h5>
                 <div className="flex items-center justify-center my-3">
-                    <FcGoogle size={30} className='cursor-pointer mr-2' 
-                    onClick={() => signIn('google')}
+                    <FcGoogle size={30} className='cursor-pointer mr-2'
+                        onClick={() => signIn('google')}
                     />
                     <AiFillGithub size={30} className='cursor-pointer ml-2'
-                    onClick={() => signIn('github')}
+                        onClick={() => signIn('github')}
                     />
                 </div>
                 <h5 className='text-center pt-4 font-Poppins text-[14px]'>
