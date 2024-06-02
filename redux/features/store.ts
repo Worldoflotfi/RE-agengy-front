@@ -22,4 +22,4 @@ const initializeApp = async () => {
 };
 
 initializeApp();
-//server side : make sure about getting data from server (check on devTools when reloading )
+//server side : make sure getting data from server (check on devTools when reloading )

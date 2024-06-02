@@ -48,10 +48,10 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
     if (name !== '') {
       await editProfile({
         name: name,
-        email: user.email,
-      });
+       // email: user.email, //remove if(email&&user) statement from usercontroller
+      });  ///user can not change the email (readOnly)
     }
-  };
+  }; 
 
   return (
     <>
@@ -86,7 +86,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
         <form onSubmit={handleSubmit}>
           <div className="800px:w-[50%] m-auto block pb-4">
             <div className="w-[100%]">
-              <label className="block pb-2">Full Name</label>
+              <label className="block pb-2  text-black dark:text-[#fff]">Full Name</label>
               <input
                 type="text"
                 onChange={(e) => setName(e.target.value)}
@@ -96,7 +96,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
               />
             </div>
             <div className="w-[100%] pt-2">
-              <label className="block pb-2">Email Adress</label>
+              <label className="block pb-2  text-black dark:text-[#fff]">Email Adress</label>
               <input
                 type="text"
                 readOnly
@@ -108,7 +108,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
             <input
               type="submit"
               value='Update'
-              className={`w-full 800px:w-[250px] h-[40px] border dark:border-[#ffc100] text-center dark:text-[#fff] text-black rounded-[7px] mt-8 cursor-pointer`}
+              className={`w-full 800px:w-[250px] h-[40px] border dark:border-[#ffbf009a] hover:dark:border-[#ffc100] border-slate-900 text-center dark:text-[#fff] text-black rounded-[7px] mt-8 cursor-pointer`}
               required
             />
           </div>
