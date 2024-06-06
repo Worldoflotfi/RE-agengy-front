@@ -67,9 +67,9 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
           <input
             type="file"
             name=''
+            className='hidden'
             onChange={imageHandler}
             id='avatar'
-            className='hidden'
             accept='image/png,image/jpg,image/jpeg,image/webp'
           />
 

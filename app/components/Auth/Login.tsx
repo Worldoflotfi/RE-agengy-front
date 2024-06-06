@@ -42,14 +42,14 @@ const Login: FC<Props> = ({ setRoute, setOpen }) => {
                 toast.error(errorData.data.message);
             }
         }
-    }, [isSuccess, error]);
+    }, [isSuccess, error, setOpen]);
 
     const { errors, touched, values, handleChange, handleSubmit } = formik;
 
     return (
         <div className='w-full'>
             <h1 className={`${styles.title}`}>
-                Join to AL-Mokhbir AL-Aqari
+             Join ALMOKHBIR ALAQARI
             </h1>
             <form onSubmit={handleSubmit}>
                 <label

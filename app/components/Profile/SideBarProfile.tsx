@@ -54,8 +54,8 @@ const SideBarProfile: FC<Props> = ({ user, active, setActive, avatar, logOutHand
                     Enrolled Courses
                 </h5>
             </div>
-            {
-                user.role === 'admin' && (
+            {/* {
+                user.role === 'admin' && (  ////appearing only for admin ... removing it for testing*/}
                     <Link
                         className={`w-full flex items-center px-3 py-4 cursor-pointer ${
                             active === 6 ? 'dark:bg-slate-800 bg-white' : 'bg-transparent'}`}
@@ -66,8 +66,8 @@ const SideBarProfile: FC<Props> = ({ user, active, setActive, avatar, logOutHand
                             Admin Dashboard
                         </h5>
                     </Link>
-                )
-            }
+                {/* )
+            } */}
             <div
                 className={`w-full flex items-center px-3 py-4 cursor-pointer
          ${active === 4 ? 'dark:bg-slate-800 bg-white' : 'bg-transparent'}`}
