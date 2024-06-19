@@ -13,3 +13,4 @@ export default function AdminProtected({children}: ProtectedProps){
 
     return isAdmin ? children : redirect('/');
 }
+//removing protected route from needed components for testing

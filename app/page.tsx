@@ -28,6 +28,7 @@ const Page: FC<Props> = (props) => {
      setRoute={setRoute}
     />
     <Hero/>
+    {/* below hero for testing first landing page */}
     <BelowHero/>
     </div>
   )
