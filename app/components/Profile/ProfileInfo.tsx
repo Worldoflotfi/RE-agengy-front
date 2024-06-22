@@ -26,7 +26,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
       if (fileReader) {
         const avatar = fileReader.result;
         updateAvatar({
-          avatar,
+          avatar
         });
       }
     };
