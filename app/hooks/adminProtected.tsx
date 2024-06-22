@@ -1,16 +1,18 @@
 import { redirect } from "next/navigation";
 import React from "react";
-import { UseSelector, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 interface ProtectedProps{
     children: React.ReactNode;
 }
 
 export default function AdminProtected({children}: ProtectedProps){
+
     const {user} = useSelector((state: any) => state.auth);
 
     const isAdmin = user?.role === 'admin';
 
     return isAdmin ? children : redirect('/');
 }
+
 //removing protected route from needed components for testing
