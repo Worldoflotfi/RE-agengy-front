@@ -103,6 +103,7 @@ const Header: FC<Props> = ({ open, setOpen, activeItem, route, setRoute }) => {
                             {
                                 user ? (
                                     <Link href={'/profile'}>
+                                        <ThemeSwitcher/>
                                         <Image
                                             src={user.avatar ? user.avatar.url : avatar}
                                             alt=''
