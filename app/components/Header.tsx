@@ -31,7 +31,9 @@ const Header: FC<Props> = ({ open, setOpen, activeItem, route, setRoute }) => {
     const { data } = useSession();
     const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
     const [logout, setLogout] = useState(false);
-
+    // const [data, user] = useSession();
+    
+    
     const { } = useLogOutQuery(undefined, {
         skip: !logout ? true : false,
     });
@@ -62,6 +64,8 @@ const Header: FC<Props> = ({ open, setOpen, activeItem, route, setRoute }) => {
             }
         });
     }
+
+    // console.log(user);
     const handleClose = (e: any) => {
         if (e.target.id === 'screen') {
             {
